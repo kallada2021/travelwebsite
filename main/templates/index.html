@@ -1,0 +1,25 @@
+{% extends "../base/base.html" %}
+{% block title %} Home {% endblock %}
+
+{% block template %}
+
+{% include "../base/navbar.html" %}
+{% include "./components/splash.html" %}
+
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-12 col-lg-8">
+
+          {% include "./components/tour-list-elements.html" %}-
+
+        </div>
+        <div class="d-none d-lg-block col-4">
+
+            Here is where some Travel Tour tags will go later!!
+
+          {% include 'base/footer.html' %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
