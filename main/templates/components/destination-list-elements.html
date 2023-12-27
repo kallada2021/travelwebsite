@@ -1,5 +1,5 @@
-{% for tour in tours %}
-<a href="{{ tour.get_absolute_url }}" class="text-decoration-none">
+{% for destination in destinations %}
+<a href="{{ destination.get_absolute_url }}" class="text-decoration-none">
 {% if forloop.last %}
 <div class="card border-0 pb-3 pb-sm-5" hx-get="{% url 'homepage' %}?page={{ page_obj.number|add:1 }}" hx-trigger="revealed"
     hx-swap="afterend">
@@ -9,10 +9,10 @@
         <div class="row">
             <div class="col-8">
                 <div class="card-body p-0">
-                    <div class="d-flex pb-2 text-body infscroll-author"> {{tour.country}} </div>
-                    <h1 class="mb-1 text-body fw-bold infscroll-title">{{tour.description|truncatechars:100}}</h1>
-                    <h2 class="text-muted fs-6 d-none d-sm-block">{{tour.city}}</h2>
-                    <div class="text-muted infscroll-date">{{tour.updated_at | date:"M d, Y"}}</div>
+                    <div class="d-flex pb-2 text-body infscroll-author"> {{destination.country}} </div>
+                    <h1 class="mb-1 text-body fw-bold infscroll-title">{{destination.description|truncatechars:100}}</h1>
+                    <h2 class="text-muted fs-6 d-none d-sm-block">{{destination.city}}</h2>
+                    <div class="text-muted infscroll-date">{{destination.updated_at | date:"M d, Y"}}</div>
                 </div>
             </div>
             <div class="col-4">

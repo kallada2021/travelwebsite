@@ -1,0 +1,25 @@
+{% extends "../base/base.html" %}
+{% block title %} Destination {% endblock %}
+
+{% block template %}
+
+{% include "../base/navbar.html" %}
+
+
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-12 col-lg-8">
+
+          {% include "./components/destination-list-elements.html" %}-
+
+        </div>
+        <div class="d-none d-lg-block col-4">
+
+            Here is where some Destination tags will go later!!
+
+          {% include 'base/footer.html' %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

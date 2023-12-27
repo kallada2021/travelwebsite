@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, render
 from django.views.generic import ListView
-from .models import Tour 
+from .models import Destination, Tour 
 
 class HomeView(ListView):
     model = Tour 
@@ -11,3 +11,10 @@ class HomeView(ListView):
         # if self.request.htmx:
         #     return "components/post-list-elements.html"
         return "index.html"
+
+
+class DestinationView(ListView):
+    model = Destination
+    context_object_name = "Destinations"
+    paginate_by = 10
+    
