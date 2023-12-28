@@ -15,6 +15,9 @@ class Destination(models.Model):
         verbose_name_plural = "Destinations"
         ordering = ("created_at",)
 
+    def get_absolute_url(self):
+        return reverse("destination-single", args=[self.city])
+
     def __str__(self) -> str:
         return f"{self.country} + {self.city}"
     

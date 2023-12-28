@@ -24,29 +24,18 @@
     }
 </style>
 
-#TODO:  Add tour model fields 
+# Add Destination model fields 
 <div class="tours center mx-auto" style="max-width: 683px;">
 <div class="text-muted">
-    {{tour.name}}
+    {{destination.country}}
 </div>
 
-<div class="text-muted">
-    {{tour.updated_at|date:"M d, Y"}}
+<div class="fw-bol dpb-2" >
+    {{destination.city}}
 </div>
 
-<h1 class="fw-bol dpb-2" >
-    {{tour.destination}}
-</h1>
-
-<h2 class="text-muted fs-4 pb-4">
-    {{tour.price | floatformat:2}}
-</h2>
-
-<h3 class="text-muted fs-4 pb-4">
-    {{tour.price | floatformat:2}}
-</h3>
-<div class="post">
-    {{tour.description | markdown | safe }}
+<div class="tour">
+    {{destination.description | markdown | safe }}
 </div>
 
 </div>
@@ -57,16 +46,16 @@
 
 <div class="col-12">
     <div>
-        <div class="pb-3">More tours {{tour.city}}</div>
-        {% for tour in related %}
-            <a class="text-decoration-none" href="{{post.get_absolute_url}}">
+        <div class="pb-3">View More Destinations {{destination.city}}</div>
+        {% for destination in related %}
+            <a class="text-decoration-none" href="{{destination.get_absolute_url}}">
                 <div class="card mb-3 border-0 ps-1">
                     <div class="row">
                         <div class="col-9 pe-2">
                             <span class="text-dark small">
-                                {{post.author}}
+                                {{destination.city}}
                             </span>
-                            <h1 class="mb-1 fs-6 p-0 text-dark fw-bold">{{post.title|truncatechars:80}}</h1>
+                            <h1 class="mb-1 fs-6 p-0 text-dark fw-bold">{{destination.description|truncatechars:80}}</h1>
                         </div>
                         <div class="col-3">
                             <img src="https://picsum.photos/205/115" class="img-fluid float-end">
@@ -79,4 +68,3 @@
 </div>
 
 {% endblock %}
-
