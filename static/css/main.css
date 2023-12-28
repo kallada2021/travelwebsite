@@ -37,6 +37,10 @@ html, body {
     font-weight: 500 I !important;
 }
 
+.fw-700 {
+    font-weight: 700 I !important;
+}
+
 .infscroll-title {
     font-size: 22px;
     letter-spacing: -0.6px;
@@ -47,7 +51,7 @@ html, body {
         font-size: 0.9375rem; 
         letter-spacing: 0.0px;
     }
-    .infscroll-author, .infscroll-date {
+    .infscroll-city-country, .infscroll-date {
         font-size: 0.8;
     }
 }
