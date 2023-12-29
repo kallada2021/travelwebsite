@@ -8,3 +8,8 @@ class TestDestinationModel:
         assert dest.__str__() == f"{dest}"
         
 # Write a test case for the Tour Model str method
+
+class TestTourModel:
+    def test_str_return(self, tour_factory):
+        tour = tour_factory(name="Hyderabad Tour")
+        assert tour.__str__() == f"{tour}"
