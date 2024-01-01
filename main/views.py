@@ -22,12 +22,11 @@ class DestinationView(ListView):
     def get_template_names(self):
         return "destination.html"
     
- 
-# TODO: make a function view for single destinations  
+  
 def destination_single(request, destination):
-    city =get_object_or_404(Destination, city = destination)
+    destination =get_object_or_404(Destination, city = destination)
     related = Destination.objects.filter(city=destination.city)[:5]
-    return render(request, "single-destination.html", {"city": city, "related": related})
+    return render(request, "single-destination.html", {"destination": destination, "related": related})
    
 def tour_single(request, tour):
     tour = get_object_or_404(Tour,name=tour)

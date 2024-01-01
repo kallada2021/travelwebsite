@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
+    'usermanagement',
+    'crispy_forms',
     "django_htmx"
 ]
 
