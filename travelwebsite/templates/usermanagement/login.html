@@ -4,7 +4,7 @@
 
 {% load crispy_forms_tags %}
 
-{% block title %} REGISTRATION {% endblock %}
+{% block title %} Login {% endblock %}
 
 {% block template %}
 
@@ -22,7 +22,7 @@
         <br>
         {{ form.username|as_crispy_field }}
         <br>
-        {{ form.password1|as_crispy_field }}
+        {{ form.password|as_crispy_field }}
         <br>
         <input class="btn btn-primary w-100" type="submit" value="Create Account" />
 
