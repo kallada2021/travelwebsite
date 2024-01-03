@@ -8,8 +8,8 @@ class HomeView(ListView):
     paginate_by = 10
     
     def get_template_names(self):
-        # if self.request.htmx:
-        #     return "components/post-list-elements.html"
+        if self.request.htmx:
+            return "components/post-list-elements.html"
         return "index.html"
 
 

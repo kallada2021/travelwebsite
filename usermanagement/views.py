@@ -20,3 +20,5 @@ def register(request):
     return render(request, "usermanagement/register.html", context=context)
     
 #TODO: Add a login view and a logout view
+def login(request):
+    form = LoginForm()
