@@ -24,11 +24,10 @@
         <br>
         {{ form.password|as_crispy_field }}
         <br>
-        <input class="btn btn-primary w-100" type="submit" value="Create Account" />
+        <input class="btn btn-success w-10" type="submit" value="Create Account" />
 
      </form>
-     # TODO: Connect to Register Page 
-     <p>Already have an account? <br> <a href="">Login to your account</a></p>
+     <p>Already have an account? <br> <a href="{% url 'register' %}">Login to your account</a></p>
     </div>
 
     <br>
