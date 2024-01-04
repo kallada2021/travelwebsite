@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.models import auth 
 from .forms import CreateUserForm, LoginForm
 from .models import UserProfile
 
@@ -16,7 +17,7 @@ def register(request):
 
             profile = UserProfile.objects.create(user=current_user)
             profile.save()
-            return redirect("usermanagement/login.html")
+            return redirect("login")
 
     context = {"form":form}
     return render(request, "usermanagement/register.html", context=context)
@@ -32,7 +33,7 @@ def login(request):
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 auth.login(request, user)
-                return redirect("index.html")
+                return redirect("homepaege")
             
     context = {"form": form}
     return render(request, "usermanagement/login.html", context=context)
