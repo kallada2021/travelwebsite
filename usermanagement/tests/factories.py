@@ -1,5 +1,6 @@
 import factory
-from django.contrib.auth.models import User 
+from django.contrib.auth.models import User
+from usermanagement.models import UserProfile
 
 class UserFactory(factory.django.DjangoModelFactory):
     class Meta:
@@ -11,4 +12,12 @@ class UserFactory(factory.django.DjangoModelFactory):
     is_staff = True 
 
 
-# TODO: Create UserProfile Factory and register the factories on conftest.py
+class UserProfileFactory(factory.django.DjangoModelFactory):
+    
+    class Meta:
+        model = UserProfile
+    
+    user = factory.SubFactory(UserFactory)
+    bio = "Enthusiastic Traveller"
+    location = "Hyderabad"
+    phone_number = "1225-444-5555"

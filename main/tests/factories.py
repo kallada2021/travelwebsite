@@ -12,8 +12,6 @@ class DestinationFactory(factory.django.DjangoModelFactory):
     description = "It is an IT Hub also known as Hitech city"
     image = "images/destination/destination_1.jpg"
 
-    
-# TODO: Create a Factory for the Tour model
 
 class TourFactory(factory.django.DjangoModelFactory):
     class Meta:

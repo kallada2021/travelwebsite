@@ -22,7 +22,6 @@ def register(request):
     context = {"form":form}
     return render(request, "usermanagement/register.html", context=context)
     
-#TODO: Fix The Bug in this function
 def login(request):
     form = LoginForm()
     if request.method == "POST":
@@ -33,7 +32,7 @@ def login(request):
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 auth.login(request, user)
-                return redirect("homepaege")
+                return redirect("homepage")
             
     context = {"form": form}
     return render(request, "usermanagement/login.html", context=context)
