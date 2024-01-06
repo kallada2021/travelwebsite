@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'main',
     'usermanagement',
     'crispy_forms',
-    "django_htmx"
+    "django_htmx",
+     "taggit",
 ]
 
 MIDDLEWARE = [

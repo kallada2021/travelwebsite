@@ -22,7 +22,7 @@ def register(request):
     context = {"form":form}
     return render(request, "usermanagement/register.html", context=context)
     
-#TODO: Add a login view and a logout view
+#TODO: Fix The Bug in this function
 def login(request):
     form = LoginForm()
     if request.method == "POST":

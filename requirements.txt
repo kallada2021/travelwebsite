@@ -4,6 +4,7 @@ distlib==0.3.6
 Django==5.0
 django-crispy-forms==1.14.0
 django-htmx==1.17.2
+django-taggit==5.0.1
 factory-boy==3.3.0
 Faker==21.0.0
 filelock==3.12.2

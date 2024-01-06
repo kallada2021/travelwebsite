@@ -1,7 +1,9 @@
 from django.db import models
 from django.urls import reverse
+from taggit.managers import TaggableManager
 
 
+# TODO: Add tags
 class Destination(models.Model):
     country = models.CharField(max_length=100)
     city = models.CharField(max_length=100)
@@ -30,6 +32,8 @@ class Tour(models.Model):
     destination = models.ForeignKey(Destination, on_delete=models.CASCADE)
     updated_at = models.DateTimeField(auto_now=True)
     created_at = models.DateTimeField(auto_now_add = True)
+    
+    tags = TaggableManager()
 
     class Meta:
         verbose_name_plural = "Tours"
