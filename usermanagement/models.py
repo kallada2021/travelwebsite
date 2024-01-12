@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-# Create your models here.
+# TODO: Add Booking class and connect to the user profile
 class UserProfile(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     bio = models.TextField(max_length=200, blank=True)
@@ -16,3 +16,5 @@ class UserProfile(models.Model):
     
     def __str__(self) -> str:
         return f"{self.user}"
+    
+    

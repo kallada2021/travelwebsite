@@ -33,4 +33,9 @@ def tour_single(request, tour):
     related = Tour.objects.filter(name=tour.name)[:5]
     return render(request, "single-tour.html", {"tour": tour, "related": related})
 
+class TagListView(ListView):
+    model = Tour
+    paginate_by = 10 
+    context_object_name = "tours"
     
+    # TODO: Add html template
