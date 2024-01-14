@@ -10,4 +10,9 @@ class TestSinglePages:
         response = client.get(url)
         assert response.status_code == 200 
         
-    # TODO: Write test for the single destination page
+
+    def test_destination_single_url(self, client, destination_factory):
+        destination = destination_factory()
+        url = reverse("destination-single", kwargs={"destination": destination.city})
+        response = client.get(url)
+        assert response.status_code == 200

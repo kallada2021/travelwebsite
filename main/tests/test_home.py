@@ -13,6 +13,6 @@ class TestHomePage:
         assert response.status_code == 200
     
     def test_destinationpage_url(self, client):
-        url = reverse("destinationpage")
+        url = reverse("destination-page")
         response = client.get(url)
         assert response.status_code == 200
