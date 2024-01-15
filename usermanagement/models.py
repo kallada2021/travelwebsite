@@ -3,7 +3,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from main.models import Tour
 
-# TODO: Add Booking class and connect to the user profile
+
 class UserProfile(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     bio = models.TextField(max_length=200, blank=True)
