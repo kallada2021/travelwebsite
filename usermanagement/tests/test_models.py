@@ -8,3 +8,9 @@ class TestUserProfile:
         assert user_profile.__str__() == f"{user_profile.user}"
         assert user_profile is not None
         assert user_profile.user == user
+
+class TestBooking:
+    def test_str_return(self, booking_factory):
+        booking = booking_factory()
+        assert booking.__str__() == f"{booking.booking_id}"
+        assert booking is not None

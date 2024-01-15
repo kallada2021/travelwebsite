@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import auth 
-from .forms import CreateUserForm, LoginForm
-from .models import UserProfile
+from .forms import CreateUserForm, LoginForm, BookingForm
+from .models import UserProfile, Booking
+from main.models import Tour
 
 #Register view by saving the user and creating a profile and rendering the registration page
 def register(request):
@@ -40,3 +41,20 @@ def login(request):
 def user_logout(request):
     auth.logout(request)
     return redirect("None")
+
+
+def booking(request):
+    form = BookingForm()
+    if request.method == "POST":
+        form = BookingForm(data=request.POST)
+        if form.is_valid():
+            traveller = request.POST.get("traveller")
+            user_profile = UserProfile.objects.get(user = traveller)
+            tour = request.POST.get("tour")
+            book_tour = Tour.objects.get(name = tour)
+            booking = Booking.objects.create(traveller = user_profile, tour = tour)
+            booking.save()
+            return redirect("homepage")
+    context = {"form": form}
+    return render(request, "bookings.html", context=context)
+

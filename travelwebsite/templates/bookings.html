@@ -20,8 +20,13 @@
         {% csrf_token %}
 
         Form goes here
-       
-        <input class="btn btn-success w-10" type="submit" value="Login" />
+        <br>
+        {{ form.traveller|as_crispy_field }}
+        <br>
+        {{form.tour|as_crispy_field}}
+        <br>
+
+      <input class="btn btn-success w-10" type="submit" value="Book Now" />
 
      </form>
      <a href="{% url 'homepage' %}">Back To Home</a></p>

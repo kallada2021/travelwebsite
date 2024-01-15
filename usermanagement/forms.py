@@ -1,9 +1,10 @@
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User 
+from django.contrib.auth.models import User
 
 from django.contrib.auth.forms import AuthenticationForm
 from django.forms.widgets import PasswordInput, TextInput
-from django import forms 
+from django import forms
+from .models import Booking
 
 
 class CreateUserForm(UserCreationForm):
@@ -18,3 +19,8 @@ class LoginForm(AuthenticationForm):
   
   
 # TODO: Make a Booking Form
+class BookingForm(forms.ModelForm):
+    class Meta:
+        model = Booking
+        fields = ['traveller','tour']
+
