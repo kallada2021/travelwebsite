@@ -74,6 +74,7 @@ TEMPLATES = [
             ],
             "builtins": [
                 "templatetags.markdown_processing",
+                "templatetags.tag_cloud",
             ]
         },
     },

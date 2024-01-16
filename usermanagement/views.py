@@ -48,11 +48,11 @@ def booking(request):
     if request.method == "POST":
         form = BookingForm(data=request.POST)
         if form.is_valid():
-            traveller = request.POST.get("traveller")
-            user_profile = UserProfile.objects.get(user = traveller)
+            traveller_id = request.POST.get("traveller")
+            user_profile = UserProfile.objects.get(pk = traveller_id)
             tour = request.POST.get("tour")
-            book_tour = Tour.objects.get(name = tour)
-            booking = Booking.objects.create(traveller = user_profile, tour = tour)
+            tour_id = Tour.objects.get(pk = tour)
+            booking = Booking.objects.create(traveller = user_profile, tour = tour_id)
             booking.save()
             return redirect("homepage")
     context = {"form": form}
